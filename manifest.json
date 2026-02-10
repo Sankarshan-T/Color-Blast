@@ -4,9 +4,6 @@
     "version": "1.0",
     "description": "A cool extension to help you pick colors and add them to a color palete",
     "permissions": ["storage"],
-    "background": {
-        "service_worker": "background.js"
-    },
     "action": {
         "default_popup": "popup.html"
     }
