@@ -1,57 +1,27 @@
 const pickBtn = document.getElementById("pickBtn");
-const currentColor = document.getElementById("currentColor");
+const clearBtn = document.getElementById("clearBtn");
 const palette = document.getElementById("palette");
+const currentColor = document.getElementById("currentColor");
+const emptyState = document.getElementById("emptyState");
 
+loadColors();
 
-  
+pickBtn.addEventListener("click", pickColor);
+clearBtn.addEventListener("click", clearPalette);
 
-pickBtn.addEventListener("click", async () => {
+async function pickColor() {
     try {
         const eyeDropper = new EyeDropper();
-        const result = await eyeDropper.open();
+        const { sRGBHex } = await eyeDropper.open();
 
-        addColor(result.sRGBHex);
-
+        currentColor.textContent = sRGBHex;
+        addColor(sRGBHex, true);
 
         chrome.runtime.sendMessage({
             type: "COLOR_PICKED",
-            color: result.sRGBHex
+            color: sRGBHex,
           });
-        } catch {
-          console.log("User cancelled");
-        }
-});
-
-function addColor(color) {
-    const box = document.createElement("div");
-    box.className = "color-box";
-    box.style.background = color;
-    box.dataset.tooltip = "Click to copy";
-
-    box.onclick = async () => {
-        await navigator.clipboard.writeText(color);
-        box.dataset.tooltip = "Copied!";
-        setTimeout(() => box.dataset.tooltip = "Click to copy", 800);
+    } catch {
+          console.log("Cancelled");
     }
-
-    palette.appendChild(box);
-    saveColor(color);
-}   
-
-function saveColor(color) {
-    chrome.storage.local.get(["colors"], res => {
-        const colors = res.colors || [];
-        colors.push(color);
-        chrome.storage.local.set({ colors });
-    });
 }
-
-function loadColors() {
-    chrome.storage.local.get(["colors"], res => {
-        (res.colors || []).forEach(addColor);
-    });
-}
-
-
-
-loadColors();
