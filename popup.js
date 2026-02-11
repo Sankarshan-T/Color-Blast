@@ -93,3 +93,4 @@ function loadColors() {
       colors.forEach(color => addColor(color, false));
     });
 }
+

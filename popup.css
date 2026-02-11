@@ -37,8 +37,8 @@ button:hover {
 }
 
 #currentColor {
-    margin: 10px 0;
-    font-size: 15px;
+    margin: 15px 0px 10px 10px;
+    font-size: 25px;
     color: #6c897f;
 }
 
@@ -71,6 +71,7 @@ button:hover {
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    border: 1px solid #000;
 }
 
 .color-box:hover {
@@ -89,15 +90,15 @@ button:hover {
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.15s ease;
-  }
-  
-  .color-box:hover .delete-btn {
-    opacity: 1;
-  }
-  
-  .delete-btn:hover {
-    background: rgba(0,0,0,0.65);
-  }
+}
+
+.color-box:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background: rgba(0,0,0,0.65);
+}
   
 
 #emptyState {
