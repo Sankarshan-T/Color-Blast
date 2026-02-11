@@ -6,9 +6,9 @@
 body {
     margin: 0;
     padding: 14px;
-    width: 300px;
-    background: #0f172a;
-    color: #e5e7eb;
+    width: 350px;
+    background: #6c897f39;
+    color: #124847;
 }
 
 header {
@@ -18,32 +18,35 @@ header {
 }
 
 h1 {
-    font-size: 16px;
+    font-size: 24px;
     margin: 0;
 }
 
 button {
-    background: #6366f1;
+    background: #124847;
     border: none;
-    color: white;
+    color: #3ea5a0;
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 button:hover {
-    background: #4f46e5;
+    background: #040f0f;
 }
 
 #currentColor {
     margin: 10px 0;
-    font-size: 12px;
-    color: #94a3b8;
+    font-size: 15px;
+    color: #6c897f;
 }
 
 .palette-section {
-    margin-top: 10px;
+    margin-top: 20px;
+    background: #6c897f87;
+    padding: 0 15px 15px 15px;
+    border-radius: 15px;
 }
 
 .palette-header {
@@ -65,29 +68,42 @@ button:hover {
     position: relative;
     cursor: pointer;
     transition: transform 0.15s ease;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
 }
+
 .color-box:hover {
     transform: scale(1.05);
 }
 
-.color-box::after {
-    content: "✕";
+.delete-btn {
     position: absolute;
-    top: 4px;
-    right: 6px;
-    font-size: 12px;
-    color: #fff;
+    top: -5px;
+    right: -5px;
+    border: none;
+    border-radius: 100%;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
     opacity: 0;
-    transition: opacity 0.15s;
-}
-
-.color-box:hover::after {
+    transition: opacity 0.15s ease;
+  }
+  
+  .color-box:hover .delete-btn {
     opacity: 1;
-}
+  }
+  
+  .delete-btn:hover {
+    background: rgba(0,0,0,0.65);
+  }
+  
 
 #emptyState {
     text-align: center;
-    font-size: 12px;
-    color: #64748b;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6c897f;
     margin-top: 12px;
 }
