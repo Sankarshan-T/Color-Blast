@@ -15,8 +15,14 @@
     <p id="currentColor">No color selected</p>
 
     <section class="palette-section">
+        <div class="palette-controls">
+            <select id="paletteSelect"></select>
+            <button id="addPaletteBtn">+</button>
+            <button id="deletePaletteBtn" title="Delete Current Palette">🗑️</button>
+        </div>
+
         <div class="palette-header">
-            <h2>Palette</h2>
+            <h2 id="currentPaletteName">Palette-1</h2>
             <button id="clearBtn">Clear</button>
         </div>
 
