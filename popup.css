@@ -109,6 +109,7 @@ button:hover {
     margin-top: 12px;
 }
 
+
 .palette-controls {
     display: flex;
     gap: 8px;
@@ -137,5 +138,32 @@ button:hover {
 }
 
 #deletePaletteBtn:hover {
-    background: #481212;
+    background: #003b39;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1.05); }
+}
+
+.copy-animation {
+    animation: pulse 0.2s ease-out;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #124847;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3ea5a0;
 }

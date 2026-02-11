@@ -7,6 +7,7 @@ const paletteSelect = document.getElementById("paletteSelect");
 const addPaletteButton = document.getElementById("addPaletteBtn");
 const currentPaletteName = document.getElementById("currentPaletteName");
 const deletePaletteBtn = document.getElementById("deletePaletteBtn");
+const countLabel = document.getElementById("colorCount");
 
 let allPalettes = [];
 let activeIndex = 0;
@@ -89,6 +90,7 @@ function renderColors() {
     const colors = allPalettes[activeIndex].colors;
     emptyState.hidden = colors.length > 0;
     [...colors].reverse().forEach(color => addColorToUI(color));
+    countLabel.textContent = `${colors.length} color${colors.length === 1 ? '' : 's'}`;
 }
 
 function addColorToUI(color) {
@@ -110,6 +112,17 @@ function addColorToUI(color) {
     box.onclick = () => {
         navigator.clipboard.writeText(color);
         currentColor.textContent = `Copied ${color}`;
+
+        box.classList.add('copy-animation');
+        setTimeout(() => box.classList.remove('copy-animation'), 200);
+    };
+
+    box.onmouseenter = () => {
+        document.body.style.backgroundColor = `${color}`;
+    };
+
+    box.onmouseleave = () => {
+        document.body.style.backgroundColor = "";
     };
 
     box.appendChild(deleteBtn);
