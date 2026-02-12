@@ -15,20 +15,29 @@
     <p id="currentColor">No color selected</p>
 
     <section class="palette-section">
-        <div class="palette-controls">
-            <select id="paletteSelect"></select>
-            <button id="addPaletteBtn">+</button>
-            <button id="deletePaletteBtn" title="Delete Current Palette">🗑️</button>
+        <div class="styling">
+            <div class="palette-controls">
+                <select id="paletteSelect"></select>
+                <button id="addPaletteBtn">+</button>
+                <button id="deletePaletteBtn" title="Delete Current Palette">🗑️</button>
+            </div>
+    
+            <div class="palette-header">
+                <h2 id="currentPaletteName">Palette-1</h2>
+                <span id="colorCount" style="font-size: 12px; opacity: 0.7;">0 colors</span>
+                <button id="clearBtn">Clear</button>
+            </div>
+    
+            <div id="palette" class="palette"></div>
+            <p id="emptyState">No colors yet</p>
+            </div>
         </div>
 
-        <div class="palette-header">
-            <h2 id="currentPaletteName">Palette-1</h2>
-            <span id="colorCount" style="font-size: 12px; opacity: 0.7;">0 colors</span>
-            <button id="clearBtn">Clear</button>
+        <div id="matches">
+            <h3>Suggested matches:</h3>
+            <div id="matches-container"></div>
         </div>
-
-        <div id="palette" class="palette"></div>
-        <p id="emptyState">No colors yet</p>
+        
     </section>
     
     <script src="popup.js"></script>
