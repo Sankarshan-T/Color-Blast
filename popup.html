@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="popup.css">
     <title>Color Blast</title>
 </head>
+
 <body>
-    <header>
-        <h1>🎨 Color Blast</h1>
-        <button id="pickBtn"> 🎯 Pick Color </button>
-    </header>
-    
-    <p id="currentColor">No color selected</p>
+    <div class="app-container">
+        <header>
+            <div class="logo-group">
+                <h1>🎨 Color Blast</h1>
+                <p id="currentColor">No color selected</p>
+            </div>
+            <button id="pickBtn"><span>🎯</span> Pick</button>
+        </header>
 
-    <section class="palette-section">
-        <div class="styling">
-            <div class="palette-controls">
-                <select id="paletteSelect"></select>
-                <button id="addPaletteBtn">+</button>
-                <button id="deletePaletteBtn" title="Delete Current Palette">🗑️</button>
-            </div>
-    
-            <div class="palette-header">
-                <h2 id="currentPaletteName">Palette-1</h2>
-                <span id="colorCount" style="font-size: 12px; opacity: 0.7;">0 colors</span>
-                <button id="clearBtn">Clear</button>
-            </div>
-    
-            <div id="palette" class="palette"></div>
-            <p id="emptyState">No colors yet</p>
-            </div>
-        </div>
+        <main>
+            <section class="card palette-card">
+                <div class="palette-controls">
+                    <select id="paletteSelect"></select>
+                    <button id="addPaletteBtn" title="New Palette">+</button>
+                    <button id="deletePaletteBtn" title="Delete Palette">🗑️</button>
+                </div>
 
-        <div id="matches">
-            <h3>Suggested matches:</h3>
-            <div id="matches-container"></div>
-        </div>
-        
-    </section>
-    
+                <div class="palette-header">
+                    <h2 id="currentPaletteName">Palette-1</h2>
+                    <div class="header-right">
+                        <span id="colorCount">0 colors</span>
+                        <button id="clearBtn">Clear</button>
+                    </div>
+                </div>
+
+                <div id="palette" class="color-grid"></div>
+                <p id="emptyState">No colors yet</p>
+            </section>
+
+            <section class="card matches-card">
+                <h3>Suggested matches</h3>
+                <div id="matches-container" class="color-grid"></div>
+            </section>
+        </main>
+    </div>
     <script src="popup.js"></script>
 </body>
+
 </html>
