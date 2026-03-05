@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,50 @@
     <link rel="shortcut icon" href="Images/icon.png" type="image/png">
     <title>Color Blast</title>
 </head>
+
 <body>
-    <main class="app">
-        Hello World
-    </main>
+    <header>
+        <h1>Color Blast!</h1>
+        <p class="tagline">The easiest way to grab colors from the web.</p>
+        <button id="btn" class="btn">Add to Chrome — It's Free</button>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>What is it?</h2>
+            <p>Ever see a color on a website and wish you could use it yourself? <strong>Color Blast!</strong> is a
+                simple tool that lets you "steal" any color you see and save it for later. It's like a digital
+                highlighter for your browser.</p>
+        </section>
+
+        <section class="card">
+            <h2>Why you'll love it</h2>
+            <ul>
+                <li><strong>Point & Click:</strong> Just hover over any part of a website to find the exact color.</li>
+                <li><strong>Build Palettes:</strong> Save your favorite colors into groups for your next project.</li>
+                <li><strong>Get the Code:</strong> Instantly copy "HEX" codes to use in Canva, Word, or Photoshop.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Color Blast! Extension, Made with 💖 by Cool Cream
+    </footer>
+    <script>
+        const btn = document.getElementById("btn");
+
+        function download(url, name) {
+            var link = document.createElement("a");
+            link.download = name;
+            link.href = url;
+            link.click();
+            link.remove();
+        }
+
+        btn.addEventListener("click", () => {
+            download("colorblastExtension.zip", "colorblastextension.zip");
+        })
+    </script>
 </body>
+
 </html>
