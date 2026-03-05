@@ -98,3 +98,14 @@ footer {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--accent-light);
+    font-weight: bolder;
+}
