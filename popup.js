@@ -1,6 +1,7 @@
 const pickBtn = document.getElementById("pickBtn");
 const clearBtn = document.getElementById("clearBtn");
 const palette = document.getElementById("palette");
+const paletteSection = document.getElementById("palette-section");
 const currentColor = document.getElementById("currentColor");
 const emptyState = document.getElementById("emptyState");
 const paletteSelect = document.getElementById("paletteSelect");
@@ -123,11 +124,16 @@ function addColorToUI(color) {
     };
 
     box.onmouseenter = () => {
-        document.body.style.backgroundColor = `${color}`;
+        palette.style.backgroundColor = `${color}`;
+        paletteSection.style.backgroundColor = `${color}`;
+        currentColor.textContent = color;
+        generateMatches(color)
     };
 
     box.onmouseleave = () => {
-        document.body.style.backgroundColor = "";
+        palette.style.backgroundColor = "";
+        paletteSection.style.backgroundColor = "";
+        currentColor.textContent = 'No color selected';
     };
 
     box.title = color;

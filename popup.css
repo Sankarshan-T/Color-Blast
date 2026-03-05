@@ -52,7 +52,7 @@ button:hover {
 #currentColor {
     margin: 4px 0 0 0;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 24px;
     color: var(--accent-light);
     font-weight: 600;
 }
