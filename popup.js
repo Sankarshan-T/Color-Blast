@@ -130,6 +130,8 @@ function addColorToUI(color) {
         document.body.style.backgroundColor = "";
     };
 
+    box.title = color;
+
     box.appendChild(deleteBtn);
     palette.appendChild(box);
 }
